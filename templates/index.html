@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web App Restaurant Sentiment</title>
+</head>
+<body>
+    <h1>Restaurant Sentiment</h1>
+    <h2>Work In Progress</h2>
+
+    <div class="review-body">
+        <div class="restaurant-name">
+            <p><strong>Pizza Planet</strong></p>
+        </div>
+        <div class="review">
+            <p>User1: This place is amazing!</p>
+        </div>
+        <div class="review">
+            <p>User2: Worst restaurant in town!</p>
+        </div>
+        <div class="review">
+            <p>Enter new review: </p>
+            <form onsubmit="event.preventDefault(); send_review();">
+                <textarea id="review" name="review" rows="2" cols="50"></textarea>
+                <button type="predict">Send Review</button>
+            </form>
+            <div>
+                <p>This review is: <span id="prediction"></span></p>
+            </div>
+        </div>
+    </div>
+    <script src="/static/predict.js"></script>
+</body>
+</html>
