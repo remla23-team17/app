@@ -2,7 +2,7 @@
 FROM python:3.9
 
 # Define docker address for predictor service
-ENV MODEL_SERVICE_HOST="http://172.17.0.2:8080/predict"
+ENV MODEL_SERVICE_HOST="http://172.20.0.2:8080/predict"
 
 # Define work dir
 WORKDIR /root
