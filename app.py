@@ -5,7 +5,8 @@ import requests
 
 app = Flask(__name__)
 
-MODEL_SERVICE_URL = os.environ.get("MODEL_SERVICE_HOST", "http://localhost:8080/predict")
+MODEL_SERVICE_URL = os.environ.get("MODEL_SERVICE_HOST", "http://localhost/predict")
+EXPOSE_PORT = os.environ.get("EXPOSE_PORT", 80)
 
 
 @app.route("/", methods=["GET"])
@@ -23,4 +24,4 @@ def review():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8081, debug=True)
+    app.run(host="0.0.0.0", port=EXPOSE_PORT, debug=True)

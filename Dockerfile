@@ -1,23 +1,24 @@
 # Use Python 3.9 image
 FROM python:3.9
 
-# Define docker address for predictor service
-ENV MODEL_SERVICE_HOST="http://172.20.0.2:8080/predict"
+LABEL "maintainer"="remla23-team17"
 
-# Define work dir
+USER root
+
+# Define docker address for predictor service
+ENV MODEL_SERVICE_HOST="http://172.20.0.2/predict"
+ENV EXPOSE_PORT=80
+
+EXPOSE $EXPOSE_PORT
+
 WORKDIR /root
 
-# Copy necessary files to work dir
 COPY requirements.txt .
+RUN pip install -r requirements.txt
+
 COPY static ./static
 COPY templates ./templates
 COPY app.py .
-
-# Install python dependencies
-RUN pip install -r requirements.txt
-
-# Expose port to outside world
-EXPOSE 8081
 
 # Launch web service
 ENTRYPOINT ["python"]

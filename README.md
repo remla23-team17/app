@@ -15,5 +15,5 @@ python3 app.py
 docker buildx build . -t app
 ```
 ```bash
-docker run -it -p 8081:8081 app
+docker run -it -p <PORT>:80 app
 ```
