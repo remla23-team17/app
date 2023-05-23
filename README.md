@@ -17,3 +17,7 @@ docker buildx build . -t app
 ```bash
 docker run -it -p <PORT>:80 app
 ```
+
+## Access the webservice
+
+The app is available at http://localhost
